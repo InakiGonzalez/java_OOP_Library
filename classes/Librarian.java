@@ -28,7 +28,7 @@ public class Librarian {
     }
 
 
-    public void removeBook(String title, String author, int quantity, String isbn) {
+    public void removeBook(String title, String author, int quantity, String isbn) { // isbn not used
         for (Book book : books) {
             if (book.getTitle().equals(title)) {
                 if (book.getQuantity() >= quantity) {
