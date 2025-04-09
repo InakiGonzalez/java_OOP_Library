@@ -1,9 +1,9 @@
 package Library.classes;
-
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Patron {
+public class Patron implements Runnable {
     private String name;
     private int id;
     private String contact; //email
@@ -65,6 +65,25 @@ public class Patron {
             for (Book book : checkedOutBooks) {
                 book.displayBook();
             }
+        }
+    }
+
+    @Override
+    public void run(){
+        for(int i = 0 ; i < 5 ; i++){
+
+            if(random.nextBoolean()){
+                this.checkOutBook(null);
+            } else{
+                this.returnBook(null);
+            }
+
+            try {
+                Thread.sleep(1000); // Simulate time taken for checking out or returning a book
+            } catch (InterruptedException e) {
+                System.out.println("Thread interrupted: " + e.getMessage());
+            }
+
         }
     }
 }

@@ -2,10 +2,12 @@ package Library.classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Librarian {
     //Array of books in the library
     List<Book> books = new ArrayList<>();
+    Map<String, Book> bookMap; // Map to store books for quick access
     //Array of patrons
     List<Patron> patrons = new ArrayList<>();
      
@@ -179,4 +181,5 @@ public class Librarian {
             }
         }
     }
+
 }
